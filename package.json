@@ -1,0 +1,24 @@
+{
+  "name": "ts-covid19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc" // npm run build 시 컴파일 된다
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianlee92/TypeScript-covid19.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianlee92/TypeScript-covid19/issues"
+  },
+  "homepage": "https://github.com/ianlee92/TypeScript-covid19#readme",
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
