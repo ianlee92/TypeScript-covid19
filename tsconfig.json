@@ -3,7 +3,8 @@
         "allowJs": true, // 자바스크립트 검증
         "target": "ES5", // 타입스크립트 컴파일 tsc
         "outDir": "./built", // 결과물 들어갈 곳
-        "moduleResolution": "Node" // Promise 인식 위해서
+        "moduleResolution": "Node", // Promise 인식 위해서
+        "lib": ["ES2015", "DOM", "DOM.Iterable"] // Promise 등 에러 안뜸
     },
     "include": ["./src/**/*"] //src폴더 모든 파일 대상 포함
 }
