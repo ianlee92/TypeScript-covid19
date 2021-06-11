@@ -43,8 +43,15 @@ function fetchCovidSummary() {
     return axios.get(url);
 }
 
-function fetchCountryInfo(countryCode: any, status: any) {
-    // params: confirmed, recovered, deaths
+// 정해진 값은 enum을 쓴다
+enum CovidStatus {
+    Confirmed = 'confirmed',
+    Recovered = 'recovered',
+    Deaths = 'deaths'
+}
+
+function fetchCountryInfo(countryCode: string, status: CovidStatus) {
+    // status params: confirmed, recovered, deaths
     const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
     return axios.get(url);
 }
@@ -78,14 +85,14 @@ async function handleListClick(event: any) {
     clearRecoveredList();
     startLoadingAnimation();
     isDeathLoading = true;
-    const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
+    const { data: deathResponse } = await fetchCountryInfo(selectedId, CovidStatus.Deaths);
     const { data: recoveredResponse } = await fetchCountryInfo(
         selectedId,
-        'recovered',
+        CovidStatus.Recovered,
     );
     const { data: confirmedResponse } = await fetchCountryInfo(
         selectedId,
-        'confirmed',
+        CovidStatus.Confirmed,
     );
     endLoadingAnimation();
     setDeathsList(deathResponse);
