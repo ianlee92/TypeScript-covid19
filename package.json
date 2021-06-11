@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc" // npm run build 시 컴파일 된다
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

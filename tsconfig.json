@@ -4,7 +4,8 @@
         "target": "ES5", // 타입스크립트 컴파일 tsc
         "outDir": "./built", // 결과물 들어갈 곳
         "moduleResolution": "Node", // Promise 인식 위해서
-        "lib": ["ES2015", "DOM", "DOM.Iterable"] // Promise 등 에러 안뜸
+        "lib": ["ES2015", "DOM", "DOM.Iterable"], // Promise 등 에러 안뜸
+        "noImplicitAny": true, // 외부라이브러리(axios 등) 오류에서 더 많은 타입에러가 뜸
     },
     "include": ["./src/**/*"] //src폴더 모든 파일 대상 포함
 }
