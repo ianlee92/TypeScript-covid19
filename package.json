@@ -19,6 +19,14 @@
   },
   "homepage": "https://github.com/ianlee92/TypeScript-covid19#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
     "typescript": "^4.3.2"
   }
 }
