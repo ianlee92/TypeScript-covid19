@@ -10,8 +10,10 @@ import {
 
 // utils
 // 아래 DOM에서 document.querySelector('.confirmed-total') 대신 $('.confirmed-total')로 줄여쓸 수 있다
-function $(selector: string) {
-  return document.querySelector(selector);
+// 제네릭을 통해 . HTMLDivElement을 기본값으로 설정
+function $<T extends HTMLElement = HTMLDivElement>(selector: string) {
+  const element = document.querySelector(selector);
+  return element as T;
 }
 
 function getUnixTimestamp(date: Date | string) {
@@ -20,13 +22,14 @@ function getUnixTimestamp(date: Date | string) {
 
 // DOM
 // let a: Element | HTMLElement | HTMLParagraphElement;
-const confirmedTotal = $('.confirmed-total') as HTMLSpanElement; // 타입단언
-const deathsTotal = $('.deaths') as HTMLParagraphElement;
-const recoveredTotal = $('.recovered') as HTMLParagraphElement;
-const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;
-const rankList = $('.rank-list') as HTMLOListElement;
-const deathsList = $('.deaths-list') as HTMLOListElement;
-const recoveredList = $('.recovered-list') as HTMLOListElement;
+// const temp = $<HTMLParagraphElement>('.abc');
+const confirmedTotal = $<HTMLSpanElement>('.confirmed-total');
+const deathsTotal = $<HTMLParagraphElement>('.deaths');
+const recoveredTotal = $<HTMLParagraphElement>('.recovered');
+const lastUpdatedTime = $<HTMLParagraphElement>('.last-updated-time');
+const rankList = $<HTMLOListElement>('.rank-list');
+const deathsList = $<HTMLOListElement>('.deaths-list');
+const recoveredList = $<HTMLOListElement>('.recovered-list');
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
